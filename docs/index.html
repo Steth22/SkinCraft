@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkinCraft – Free 3D Minecraft Skin Editor for Windows PC</title>
+  <meta name="description" content="SkinCraft is a free 3D Minecraft skin editor for Windows 10 and 11. Paint skins directly on a 3D model with mirror mode, layers, fill tools and pose previews, then export a PNG for Minecraft Java or Bedrock.">
+  <link rel="canonical" href="https://steth22.github.io/SkinCraft/">
+  <link rel="icon" href="assets/icon.png">
+  <meta name="theme-color" content="#1b1730">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SkinCraft">
+  <meta property="og:title" content="SkinCraft – Free 3D Minecraft Skin Editor for Windows PC">
+  <meta property="og:description" content="Paint Minecraft skins directly on a 3D model. Mirror mode, layers, fill tools, poses and PNG export for Java & Bedrock.">
+  <meta property="og:url" content="https://steth22.github.io/SkinCraft/">
+  <meta property="og:image" content="https://steth22.github.io/SkinCraft/og.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SkinCraft – Free 3D Minecraft Skin Editor for Windows PC">
+  <meta name="twitter:description" content="Paint Minecraft skins directly on a 3D model. Free for Windows 10 & 11.">
+  <meta name="twitter:image" content="https://steth22.github.io/SkinCraft/og.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SkinCraft",
+    "description": "Free 3D Minecraft skin editor for Windows PC. Paint skins directly on a 3D model with mirror mode, layers, fill tools and pose previews, then export a PNG for Minecraft Java or Bedrock.",
+    "applicationCategory": "DesignApplication",
+    "applicationSubCategory": "Minecraft skin editor",
+    "operatingSystem": "Windows 10, Windows 11",
+    "softwareVersion": "1.0.1",
+    "fileSize": "49MB",
+    "url": "https://steth22.github.io/SkinCraft/",
+    "downloadUrl": "https://github.com/Steth22/SkinCraft/releases/latest",
+    "codeRepository": "https://github.com/Steth22/SkinCraft",
+    "screenshot": ["https://steth22.github.io/SkinCraft/library.png", "https://steth22.github.io/SkinCraft/editor.png"],
+    "image": "https://steth22.github.io/SkinCraft/og.png",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Person", "name": "Steth22", "url": "https://github.com/Steth22" },
+    "featureList": [
+      "Paint directly on a 3D Minecraft player model",
+      "Mirror mode for symmetrical painting",
+      "Base and overlay (outer) layer editing",
+      "Fill by area, face, body part or whole layer",
+      "Noise brush and shading tools",
+      "Classic (Steve) and Slim (Alex) models",
+      "Pose previews: idle, walk, wave, zombie, dance",
+      "Import PNG skins and copy any Java player's skin by username",
+      "Export 64x64 PNG skins for Minecraft Java and Bedrock"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Is SkinCraft free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. SkinCraft is free to download and use, with no ads and no account needed." } },
+      { "@type": "Question", "name": "How do I make a Minecraft skin on PC with SkinCraft?", "acceptedAnswer": { "@type": "Answer", "text": "Download SkinCraft.exe, click New Skin, paint directly on the 3D model, then click Export PNG and upload the file to Minecraft." } },
+      { "@type": "Question", "name": "Does SkinCraft work for Minecraft Bedrock and Java?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. SkinCraft exports standard 64x64 PNG skins, which work in both Minecraft Java Edition and Bedrock Edition." } },
+      { "@type": "Question", "name": "Do I need to install anything?", "acceptedAnswer": { "@type": "Answer", "text": "No. SkinCraft is a single standalone .exe for Windows 10 and 11. It uses Microsoft Edge WebView2, which is already built into Windows 11 and almost all Windows 10 PCs." } },
+      { "@type": "Question", "name": "Can I edit an existing Minecraft skin?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Import any PNG skin (old 64x32 skins are converted automatically) or copy a Minecraft Java player's skin by typing their username." } },
+      { "@type": "Question", "name": "Is there a PC app like the mobile 3D skin editors?", "acceptedAnswer": { "@type": "Answer", "text": "SkinCraft brings the paint-on-the-3D-model workflow of mobile skin editor apps to Windows PCs, with mouse and keyboard controls." } }
+    ]
+  }
+  </script>
+
+  <style>
+    @font-face { font-family: 'Monocraft'; src: url(assets/monocraft.ttf) format('truetype'); font-weight: 400; font-display: swap; }
+    @font-face { font-family: 'Monocraft'; src: url(assets/monocraft-bold.ttf) format('truetype'); font-weight: 700; font-display: swap; }
+    :root {
+      --bg: #12101c; --panel: #1d1a2c; --line: #000; --text: #f3f0fb; --muted: #aaa3c4;
+      --green: #3c8527; --green-hi: #5aa83f; --green-lo: #1d4d13; --gold: #ffff55; --purple: #8c72e6;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--text); font: 16px/1.6 'Monocraft', ui-monospace, monospace;
+      background: radial-gradient(1200px 600px at 50% -10%, #2c2a63 0%, transparent 70%), linear-gradient(#141833, #12101c 40%, #1b1328);
+      background-color: var(--bg);
+    }
+    a { color: #b9a8ff; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+    header { text-align: center; padding: 64px 0 40px; }
+    .logo { margin: 0; font-weight: 700; font-size: clamp(44px, 10vw, 88px); line-height: 1; letter-spacing: .04em; }
+    .logo .a { color: #ececf1; text-shadow: 0 4px 0 #85859a, 0 8px 0 #4a4a5c, 0 14px 24px rgba(0,0,0,.6); }
+    .logo .b { color: #8ee05e; text-shadow: 0 4px 0 #45872a, 0 8px 0 #1f4413, 0 14px 24px rgba(0,0,0,.6); }
+    .tag { font-size: clamp(18px, 3vw, 24px); font-weight: 700; margin: 26px 0 6px; }
+    .sub { color: var(--muted); margin: 0 auto 30px; max-width: 640px; }
+    .btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px; padding: 12px 22px 15px; font: 700 18px 'Monocraft', monospace;
+      color: #fff; text-decoration: none; background: #4c4a5c; border: 2px solid #000;
+      box-shadow: inset 0 2px 0 #6f6c85, inset 0 -4px 0 #2c2a38; text-shadow: 2px 2px 0 rgba(0,0,0,.45);
+      transition: transform .1s, filter .15s;
+    }
+    .btn:hover { filter: brightness(1.15); transform: translateY(-2px); }
+    .btn.green { background: var(--green); box-shadow: inset 0 2px 0 var(--green-hi), inset 0 -4px 0 var(--green-lo); }
+    .note { color: var(--muted); font-size: 13px; margin-top: 12px; }
+    .shot { display: block; width: 100%; height: auto; border: 3px solid #000; box-shadow: 0 0 0 3px var(--purple), 0 30px 60px rgba(0,0,0,.5); }
+    section { padding: 48px 0; }
+    h2 { font-size: 28px; margin: 0 0 22px; text-shadow: 3px 3px 0 #000; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+    .card { background: var(--panel); border: 2px solid #000; box-shadow: inset 0 0 0 2px rgba(255,255,255,.06); padding: 18px; }
+    .card h3 { margin: 0 0 6px; font-size: 17px; color: var(--gold); text-shadow: 2px 2px 0 #3f3f15; }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; }
+    .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    ol.steps { padding-left: 22px; } ol.steps li { margin-bottom: 8px; }
+    details { background: var(--panel); border: 2px solid #000; margin-bottom: 10px; padding: 14px 18px; }
+    summary { cursor: pointer; font-weight: 700; }
+    details p { color: var(--muted); margin: 10px 0 0; }
+    footer { text-align: center; color: var(--muted); font-size: 13px; padding: 40px 0 60px; border-top: 2px solid rgba(255,255,255,.06); margin-top: 30px; }
+    @media (max-width: 700px) { .pair { grid-template-columns: 1fr; } header { padding-top: 40px; } }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <h1 class="logo"><span class="a">SKIN</span><span class="b">CRAFT</span></h1>
+    <p class="tag">Free 3D Minecraft skin editor for Windows PC</p>
+    <p class="sub">Paint your Minecraft skin right on a 3D model, see every change live, and export a PNG ready for Java or Bedrock.</p>
+    <div class="btns">
+      <a class="btn green" href="https://github.com/Steth22/SkinCraft/releases/latest">⬇ Download for Windows</a>
+      <a class="btn" href="https://github.com/Steth22/SkinCraft">View on GitHub</a>
+    </div>
+    <p class="note">Windows 10 &amp; 11 · single .exe · nothing to install · no account</p>
+  </header>
+
+  <main class="wrap">
+    <img class="shot" src="editor.png" width="1500" height="920" alt="SkinCraft editor painting a Minecraft skin on a 3D model">
+
+    <section id="features">
+      <h2>Features</h2>
+      <div class="grid">
+        <div class="card"><h3>Paint in 3D</h3><p>Click and drag directly on the player model, or on the flat 64×64 texture view.</p></div>
+        <div class="card"><h3>Mirror mode</h3><p>Paint the left and right sides of your skin at the same time.</p></div>
+        <div class="card"><h3>Smart fill</h3><p>Fill a same-color area, a whole face, a body part or the entire layer, with a live preview.</p></div>
+        <div class="card"><h3>Both layers</h3><p>Edit the base skin, the outer layer (hat, jacket, sleeves) or both at once.</p></div>
+        <div class="card"><h3>Shading tools</h3><p>Noise brush and shade tool for textured, hand-drawn looking skins.</p></div>
+        <div class="card"><h3>Classic &amp; Slim</h3><p>Switch between 4px (Steve) and 3px (Alex) arms anytime.</p></div>
+        <div class="card"><h3>Poses</h3><p>Preview your skin idle, walking, waving, as a zombie or dancing.</p></div>
+        <div class="card"><h3>Skin library</h3><p>Autosave, duplicate, import PNGs, or copy any Java player's skin by username.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="pair">
+        <img class="shot" src="library.png" width="1500" height="920" alt="SkinCraft skin library with 3D previews" loading="lazy">
+        <img class="shot" src="dance.png" width="1500" height="920" alt="Minecraft skin previewed in a dance pose in SkinCraft" loading="lazy">
+      </div>
+    </section>
+
+    <section id="how">
+      <h2>How to make a Minecraft skin</h2>
+      <ol class="steps">
+        <li><a href="https://github.com/Steth22/SkinCraft/releases/latest">Download SkinCraft.exe</a> and open it.</li>
+        <li>Click <b>New Skin</b>, choose Classic or Slim, and start painting on the 3D model.</li>
+        <li>Click <b>Export PNG</b> when you're done.</li>
+        <li><b>Java:</b> upload the PNG at minecraft.net → Profile → Skin. <b>Bedrock:</b> Dressing Room → Classic Skins → Import.</li>
+      </ol>
+    </section>
+
+    <section id="faq">
+      <h2>FAQ</h2>
+      <details open><summary>Is SkinCraft free?</summary><p>Yes. It's free to download and use, with no ads and no account needed.</p></details>
+      <details><summary>Does it work for Minecraft Bedrock and Java?</summary><p>Yes. SkinCraft exports standard 64×64 PNG skins, which work in both Java Edition and Bedrock Edition.</p></details>
+      <details><summary>Do I need to install anything?</summary><p>No. It's a single standalone .exe. It uses Microsoft Edge WebView2, which is built into Windows 11 and almost all Windows 10 PCs.</p></details>
+      <details><summary>Can I edit an existing skin?</summary><p>Yes. Import any PNG skin (old 64×32 skins convert automatically), or copy a Minecraft Java player's skin by username.</p></details>
+      <details><summary>Windows says the app is unrecognized. Is it safe?</summary><p>The app isn't code-signed, so SmartScreen may warn you the first time. Click <b>More info → Run anyway</b>. The full source code is on GitHub.</p></details>
+      <details><summary>Is there a PC app like the mobile 3D skin editors?</summary><p>That's what SkinCraft is: the paint-on-the-3D-model workflow of mobile skin editor apps, on Windows with mouse and keyboard controls.</p></details>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p>SkinCraft is a fan project and isn't affiliated with or endorsed by Mojang or Microsoft. Minecraft is a trademark of Mojang Synergies AB.</p>
+    <p>Font: <a href="https://github.com/IdreesInc/Monocraft">Monocraft</a> (SIL OFL 1.1) · 3D: <a href="https://threejs.org">three.js</a></p>
+    <p>🤖 Made with AI. Built with <a href="https://claude.com/claude-code">Claude Code</a>.</p>
+  </footer>
+</body>
+</html>

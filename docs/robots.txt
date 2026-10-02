@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://steth22.github.io/SkinCraft/sitemap.xml

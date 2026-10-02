@@ -2,10 +2,14 @@
 
 # SkinCraft
 
-**A 3D Minecraft skin editor for Windows.**
-Paint right on the model, see every change live, and export a skin ready for Minecraft.
+**A free 3D Minecraft skin editor for Windows PC.**
+Paint right on the model, see every change live, and export a skin ready for Minecraft Java or Bedrock.
 
-[**⬇ Download the latest version**](https://github.com/Steth22/SkinCraft/releases/latest)
+[![Latest release](https://img.shields.io/github/v/release/Steth22/SkinCraft?label=download&color=3c8527)](https://github.com/Steth22/SkinCraft/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/Steth22/SkinCraft/total?color=6a4fc4)](https://github.com/Steth22/SkinCraft/releases)
+![Platform](https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-0078d4)
+
+[**⬇ Download the latest version**](https://github.com/Steth22/SkinCraft/releases/latest) · [Website](https://steth22.github.io/SkinCraft/)
 
 ![SkinCraft library](docs/library.png)
 
@@ -107,6 +111,25 @@ Each skin is a normal PNG named after the skin, in:
 ```
 
 Click the 📁 button on the home screen to open it. Any 64×64 skin PNG you copy into this folder shows up in the library.
+
+---
+
+## FAQ
+
+**Is SkinCraft free?**
+Yes. No ads, no account, no payments.
+
+**Does it work for Bedrock and Java?**
+Yes. It exports standard 64×64 PNG skins, which work in both editions.
+
+**Can I edit a skin I already have?**
+Yes. Import any PNG (old 64×32 skins are converted automatically) or copy a Java player's skin by username.
+
+**Is there a PC version of the mobile 3D skin editor apps?**
+That's what SkinCraft is: the same paint-on-the-3D-model workflow, made for Windows with mouse and keyboard controls.
+
+**Windows says the app is unrecognized. Is it safe?**
+The app isn't code-signed yet, so SmartScreen warns about new apps. Click **More info → Run anyway**. All the source code is here in this repository.
 
 ---
 
