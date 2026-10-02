@@ -37,6 +37,22 @@ public sealed class MainForm : Form
 
     async Task InitAsync()
     {
+        try
+        {
+            CoreWebView2Environment.GetAvailableBrowserVersionString();
+        }
+        catch (WebView2RuntimeNotFoundException)
+        {
+            const string url = "https://go.microsoft.com/fwlink/p/?LinkId=2124703";
+            var answer = MessageBox.Show(this,
+                "SkinCraft needs Microsoft Edge WebView2, which is missing on this PC.\n\nOpen the official Microsoft download page now? Install it, then start SkinCraft again.",
+                "SkinCraft", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (answer == DialogResult.Yes)
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(url) { UseShellExecute = true });
+            Close();
+            return;
+        }
+
         var dataDir = Path.Combine(store.Root, "WebView2");
 #if DEBUG
         dataDir = Environment.GetEnvironmentVariable("SKINCRAFT_WEBVIEW_DIR") ?? dataDir;
