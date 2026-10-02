@@ -1,0 +1,38 @@
+SkinCraft
+Copyright (c) 2026 Steth22. All rights reserved.
+
+SkinCraft was created by Steth22 with the help of Claude Code, an AI coding
+assistant by Anthropic. All rights in SkinCraft are held by Steth22.
+
+YOU MAY:
+  - Download, install and use SkinCraft for free, for personal or commercial
+    purposes, including the web version.
+  - Use, share and sell the skins you make with SkinCraft. Your skins are yours.
+  - Read the source code in this repository to learn from it.
+  - Fork this repository on GitHub only to propose changes back to it
+    through a pull request.
+
+YOU MAY NOT, without prior written permission from Steth22:
+  - Copy, redistribute, re-upload or mirror SkinCraft or its source code,
+    in whole or in part.
+  - Publish, sell or distribute modified versions or derivative works.
+  - Use the SkinCraft name, logo or branding for another project.
+
+Contributions submitted through pull requests may be included in SkinCraft
+under these same terms.
+
+THIRD-PARTY COMPONENTS keep their own licenses and are not covered by the
+restrictions above:
+  - three.js (wwwroot/js/three.module.min.js): MIT License,
+    Copyright (c) 2010-2024 three.js authors.
+  - Monocraft font (wwwroot/fonts, docs/assets): SIL Open Font License 1.1,
+    Copyright (c) 2022 Idrees Hassan. See MONOCRAFT-OFL.txt.
+
+SkinCraft is a fan project and is not affiliated with or endorsed by Mojang
+or Microsoft. Minecraft is a trademark of Mojang Synergies AB.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM THE
+USE OF THE SOFTWARE.

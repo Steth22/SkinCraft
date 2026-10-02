@@ -104,6 +104,7 @@ public sealed class MainForm : Form
         ".png" => "image/png",
         ".svg" => "image/svg+xml",
         ".json" => "application/json",
+        ".webmanifest" => "application/manifest+json",
         _ => "application/octet-stream",
     };
 

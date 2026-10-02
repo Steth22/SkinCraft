@@ -1,0 +1,17 @@
+{
+  "name": "SkinCraft – 3D Minecraft Skin Editor",
+  "short_name": "SkinCraft",
+  "description": "Paint Minecraft skins directly on a 3D model and export a PNG for Java or Bedrock.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0a0b14",
+  "theme_color": "#1b1730",
+  "categories": ["games", "graphics", "design"],
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

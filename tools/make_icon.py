@@ -51,3 +51,6 @@ root = os.path.join(os.path.dirname(__file__), '..')
 open(os.path.join(root, 'app.ico'), 'wb').write(out)
 open(os.path.join(root, 'wwwroot', 'icon.png'), 'wb').write(imgs[3])
 print('ok', len(out))
+for size in (192, 512):
+    open(os.path.join(root, 'wwwroot', f'icon-{size}.png'), 'wb').write(png(size))
+print('pwa icons ok')

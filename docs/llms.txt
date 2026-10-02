@@ -1,12 +1,12 @@
 # SkinCraft
 
-> SkinCraft is a free 3D Minecraft skin editor for Windows 10 and 11. Users paint skins directly on a 3D player model and export a 64x64 PNG for Minecraft Java Edition or Bedrock Edition. It ships as a single standalone .exe with nothing to install.
+> SkinCraft is a free 3D Minecraft skin editor. It runs directly in the web browser (no download) on Windows, Mac, Linux, Chromebook, Android and iPhone, and there is also a standalone Windows app. Users paint skins directly on a 3D player model and export a 64x64 PNG for Minecraft Java Edition or Bedrock Edition.
 
 Key facts:
-- Platform: Windows 10 / 11 desktop (64-bit). Single standalone .exe, about 49 MB.
+- Platforms: any modern web browser (desktop and mobile, touch controls, installable as a PWA and usable offline) at https://steth22.github.io/SkinCraft/app/ ; plus a standalone Windows 10/11 .exe.
 - Price: free, no ads, no account.
-- Made by Steth22. Built with C# (.NET 9, WinForms + WebView2) and three.js.
-- Similar idea to mobile "3D skin editor" apps, but for PC with mouse and keyboard.
+- Made by Steth22 (copyright holder, all rights reserved), built with the help of Claude Code. Web app uses three.js; the Windows app wraps it with C# (.NET 9, WinForms + WebView2).
+- Similar idea to mobile "3D skin editor" apps, available everywhere through the browser.
 
 Features:
 - Paint directly on the 3D model or on a flat 64x64 texture view
@@ -15,11 +15,12 @@ Features:
 - Base layer, overlay (outer) layer, or both at once; hide individual body parts
 - Classic (4px arms, Steve) and Slim (3px arms, Alex) models
 - Pose previews: still, idle, walk, wave, zombie, dance
-- Skin library with autosave, rename, duplicate, delete to Recycle Bin
+- Skin library with autosave, rename, duplicate, delete
 - Import PNG skins (64x32 legacy skins are converted), drag and drop, and copy any Minecraft Java player's skin by username
 - Shortcuts work with any keyboard layout; performance mode for slower PCs
 
 ## Links
+- [Open the web app](https://steth22.github.io/SkinCraft/app/): use SkinCraft in the browser, no download
 - [Website](https://steth22.github.io/SkinCraft/): overview, screenshots, FAQ
 - [Download (latest release)](https://github.com/Steth22/SkinCraft/releases/latest): SkinCraft.exe
 - [Source code and README](https://github.com/Steth22/SkinCraft): usage guide, keyboard shortcuts, build instructions

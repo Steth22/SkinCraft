@@ -36,9 +36,9 @@ def shadowed(x, y, text, f, fill, sh=(30, 26, 44)):
     d.text((x, y), text, font=f, fill=fill)
 
 shadowed(60, 318, '3D Minecraft Skin Editor', font('monocraft-bold.ttf', 30), (255, 255, 255))
-shadowed(60, 366, 'for Windows PC', font('monocraft-bold.ttf', 30), (255, 255, 255))
+shadowed(60, 366, 'in your browser & on PC', font('monocraft-bold.ttf', 30), (255, 255, 255))
 small = font('monocraft.ttf', 24)
-for i, line in enumerate(['Paint directly on the 3D model', 'Mirror, fill, layers & poses', 'Free for Windows 10 & 11']):
+for i, line in enumerate(['Paint directly on the 3D model', 'Mirror, fill, layers & poses', 'Free - no download needed']):
     shadowed(60, 438 + i * 38, '> ' + line, small, (255, 255, 85), (63, 63, 21))
 
 out = os.path.join(ROOT, 'docs', 'og.png')

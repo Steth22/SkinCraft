@@ -2,14 +2,17 @@
 
 # SkinCraft
 
-**A free 3D Minecraft skin editor for Windows PC.**
+**A free 3D Minecraft skin editor that runs in your browser.**
 Paint right on the model, see every change live, and export a skin ready for Minecraft Java or Bedrock.
+Works on PC, Mac, Linux, Chromebook, Android and iPhone, with an optional Windows app.
 
 [![Latest release](https://img.shields.io/github/v/release/Steth22/SkinCraft?label=download&color=3c8527)](https://github.com/Steth22/SkinCraft/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/Steth22/SkinCraft/total?color=6a4fc4)](https://github.com/Steth22/SkinCraft/releases)
-![Platform](https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-0078d4)
+![Platform](https://img.shields.io/badge/platform-Web%20%7C%20Windows%20%7C%20Mac%20%7C%20Linux%20%7C%20Mobile-0078d4)
 
-[**⬇ Download the latest version**](https://github.com/Steth22/SkinCraft/releases/latest) · [Website](https://steth22.github.io/SkinCraft/)
+### [▶ Open SkinCraft in your browser](https://steth22.github.io/SkinCraft/app/)
+
+[⬇ Windows app](https://github.com/Steth22/SkinCraft/releases/latest) · [Website](https://steth22.github.io/SkinCraft/)
 
 ![SkinCraft library](docs/library.png)
 
@@ -60,8 +63,15 @@ Paint right on the model, see every change live, and export a skin ready for Min
 
 ---
 
-## Download and install
+## Get SkinCraft
 
+### In your browser (no download)
+Open **[steth22.github.io/SkinCraft/app](https://steth22.github.io/SkinCraft/app/)** in any modern browser: Chrome, Edge, Firefox, Safari or Brave, on PC, Mac, Linux, Chromebook, Android or iPhone.
+- On phones and tablets: paint with one finger, use two fingers to zoom and rotate, and tap the color button for colors and layers.
+- Use your browser's **Install** / **Add to Home Screen** option to keep it like an app. It also works offline.
+- Your skins are saved in your browser on that device. Use **Export PNG** to keep a copy or move a skin to another device.
+
+### Windows app
 1. Open [**Releases**](https://github.com/Steth22/SkinCraft/releases/latest) and download `SkinCraft.exe`.
 2. Run it. Nothing else to install: it's a single standalone file.
 
@@ -104,7 +114,9 @@ These work with any keyboard language.
 3. **Bedrock Edition:** Dressing Room → Classic Skins → Import, then choose the PNG.
 
 ### Where are my skins?
-Each skin is a normal PNG named after the skin, in:
+**Web version:** saved in your browser on that device.
+
+**Windows app:** each skin is a normal PNG named after the skin, in:
 
 ```
 %APPDATA%\SkinCraft\skins
@@ -119,6 +131,9 @@ Click the 📁 button on the home screen to open it. Any 64×64 skin PNG you cop
 **Is SkinCraft free?**
 Yes. No ads, no account, no payments.
 
+**Does it work on Mac, Linux, Chromebook or my phone?**
+Yes. [Open it in your browser](https://steth22.github.io/SkinCraft/app/). Touch controls are built in.
+
 **Does it work for Bedrock and Java?**
 Yes. It exports standard 64×64 PNG skins, which work in both editions.
 
@@ -126,7 +141,7 @@ Yes. It exports standard 64×64 PNG skins, which work in both editions.
 Yes. Import any PNG (old 64×32 skins are converted automatically) or copy a Java player's skin by username.
 
 **Is there a PC version of the mobile 3D skin editor apps?**
-That's what SkinCraft is: the same paint-on-the-3D-model workflow, made for Windows with mouse and keyboard controls.
+That's what SkinCraft is: the same paint-on-the-3D-model workflow, on any device, with mouse, keyboard and touch controls.
 
 **Windows says the app is unrecognized. Is it safe?**
 The app isn't code-signed yet, so SmartScreen warns about new apps. Click **More info → Run anyway**. All the source code is here in this repository.
@@ -145,6 +160,8 @@ dotnet publish -c Release -o publish
 
 The standalone app is written to `publish/SkinCraft.exe`.
 
+The web app is the `wwwroot/` folder. Serve it with any static web server, for example `python -m http.server --directory wwwroot`. Run `python tools/sync_web.py` to copy it into `docs/app/`, which GitHub Pages serves at `/app/`.
+
 ### Project structure
 ```
 SkinCraft/
@@ -162,6 +179,13 @@ SkinCraft/
         ├── world.js       # Background scene and particles
         └── ...
 ```
+
+---
+
+## License
+
+**© 2026 Steth22. All rights reserved.**
+You're free to use SkinCraft and everything you make with it. Copying, redistributing or publishing modified versions of SkinCraft requires written permission. See [LICENSE](LICENSE) for the full terms.
 
 ---
 
