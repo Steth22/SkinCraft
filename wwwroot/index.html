@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SkinCraft</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="world"></canvas>
+
+  <div id="app">
+    <section id="screen-library" class="screen">
+      <header class="lib-header">
+        <div class="logo-wrap">
+          <h1 id="logo" class="logo" aria-label="SkinCraft"></h1>
+          <div id="splash" class="splash"></div>
+        </div>
+        <div class="lib-actions">
+          <button class="mc-btn green big" id="btn-new" data-tip="Create a new skin|Ctrl+N"></button>
+          <button class="mc-btn big" id="btn-import" data-tip="Import PNG skins|You can also drag &amp; drop files"></button>
+          <button class="mc-btn big" id="btn-fetch" data-tip="Copy any player's skin|Needs internet"></button>
+          <button class="mc-btn icon big" id="btn-folder" data-tip="Open skins folder"></button>
+          <button class="mc-btn icon big" id="btn-lite" data-tip="Performance mode|Hides floating blocks, particles &amp; blur for slower PCs"></button>
+          <button class="mc-btn icon big sound-btn" data-tip="Sound on/off"></button>
+        </div>
+      </header>
+
+      <div class="lib-bar" id="lib-bar">
+        <div class="search">
+          <span id="lib-search-ico"></span>
+          <input id="lib-search" class="mc-input" placeholder="Search skins…" spellcheck="false" dir="auto">
+        </div>
+        <div class="count" id="lib-count"></div>
+      </div>
+
+      <div id="skin-grid" class="skin-grid"></div>
+      <div id="lib-nores" class="nores hidden">No skins match your search.</div>
+
+      <div id="lib-empty" class="empty hidden">
+        <div class="empty-ico" id="empty-ico"></div>
+        <h2>No skins yet!</h2>
+        <p>Create your first skin, import a PNG, or grab a player's skin.</p>
+        <button class="mc-btn green big" id="btn-empty-new"><span>Create my first skin</span></button>
+      </div>
+    </section>
+
+    <section id="screen-editor" class="screen hidden">
+      <div class="topbar panel">
+        <button class="mc-btn icon" id="ed-back" data-tip="Back to library|Esc"></button>
+        <input id="ed-name" class="mc-input name-input" maxlength="40" spellcheck="false" dir="auto" data-tip="Skin name">
+        <div class="seg" id="ed-model">
+          <button class="mc-btn" data-v="classic" data-tip="Classic model|4px wide arms">Classic</button>
+          <button class="mc-btn" data-v="slim" data-tip="Slim model|3px wide arms">Slim</button>
+        </div>
+        <div class="spacer"></div>
+        <div id="save-state" class="save-state"></div>
+        <button class="mc-btn icon" id="ed-undo" data-tip="Undo|Ctrl+Z"></button>
+        <button class="mc-btn icon" id="ed-redo" data-tip="Redo|Ctrl+Y"></button>
+        <button class="mc-btn icon sound-btn" data-tip="Sound on/off"></button>
+        <button class="mc-btn green" id="ed-export" data-tip="Save as a PNG file|Ctrl+E"></button>
+      </div>
+
+      <div class="toolbar panel" id="ed-tools"></div>
+
+      <div class="tool-opts panel hidden" id="ed-opts">
+        <div class="opt" id="opt-strength">
+          <label for="ed-strength">Strength</label>
+          <input type="range" id="ed-strength" min="4" max="40">
+          <span id="ed-strength-v"></span>
+        </div>
+        <div class="opt" id="opt-fill">
+          <label>Fill</label>
+          <div class="seg">
+            <button class="mc-btn sm" data-fill="area" data-tip="Area|Connected pixels of the same color">Area</button>
+            <button class="mc-btn sm" data-fill="face" data-tip="Face|The whole face you click">Face</button>
+            <button class="mc-btn sm" data-fill="part" data-tip="Part|Every side of that body part">Part</button>
+            <button class="mc-btn sm" data-fill="all" data-tip="Everything|All visible parts on this layer">All</button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="side panel" id="ed-side">
+        <section>
+          <h3>Color</h3>
+          <div id="ed-picker" class="picker"></div>
+        </section>
+        <section>
+          <h3>Palette</h3>
+          <div class="swatches" id="ed-palette"></div>
+          <h3 class="sub">Recent</h3>
+          <div class="swatches" id="ed-recent"></div>
+        </section>
+        <section>
+          <h3>Layers &amp; Parts</h3>
+          <div class="layers">
+            <div class="layer-col">
+              <div class="label">Editing</div>
+              <div class="seg full" id="ed-layer">
+                <button class="mc-btn sm" data-v="base" data-tip="Edit the base layer|X to switch">Base</button>
+                <button class="mc-btn sm" data-v="over" data-tip="Edit the outer layer|Hat, jacket, sleeves…">Overlay</button>
+                <button class="mc-btn sm" data-v="all" data-tip="Edit both layers|Paints whatever pixel you see">All</button>
+              </div>
+              <div class="label">Visible</div>
+              <div class="vis-row"><button class="mc-btn icon xs" id="vis-base" data-tip="Show/hide base layer"></button><span>Base</span></div>
+              <div class="vis-row"><button class="mc-btn icon xs" id="vis-over" data-tip="Show/hide overlay"></button><span>Overlay</span></div>
+            </div>
+            <div class="mini-body" id="ed-parts" data-tip="Click a part to hide it|Paint hidden spots easily">
+              <div class="mb-part" data-part="head"></div>
+              <div class="mb-part" data-part="rightArm"></div>
+              <div class="mb-part" data-part="body"></div>
+              <div class="mb-part" data-part="leftArm"></div>
+              <div class="mb-part" data-part="rightLeg"></div>
+              <div class="mb-part" data-part="leftLeg"></div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h3>Texture</h3>
+          <canvas id="ed-2d" width="512" height="512"></canvas>
+        </section>
+      </aside>
+
+      <div class="viewbar-wrap"><div class="viewbar panel" id="ed-viewbar"></div></div>
+      <div class="hud" id="ed-hud"></div>
+    </section>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toasts"></div>
+  <div id="drop-hint"><div class="panel">Drop PNG skins to import</div></div>
+  <canvas id="wipe"></canvas>
+
+  <div id="loader">
+    <div class="ld-logo">SKIN<span>CRAFT</span></div>
+    <div class="ld-bar"><i></i></div>
+    <div class="ld-text">Generating pixels…</div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
